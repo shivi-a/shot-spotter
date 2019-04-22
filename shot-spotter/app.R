@@ -20,7 +20,7 @@ ui <- fluidPage(
    
    # Application title
   
-   titlePanel("Gunshots in Camden City, NJ", "Data"),
+   titlePanel("Gunshots in Camden City, NJ"),
    
    # Add line break for Shiny App aesthetics
    
