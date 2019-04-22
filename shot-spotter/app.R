@@ -2,6 +2,7 @@
 library(shiny)
 library(tidyverse)
 library(leaflet)
+library(readr)
 
 shot <- read_rds("shot_file.rds")
 
