@@ -25,9 +25,9 @@ ui <- fluidPage(
                      "Month:",
                      min = 1,
                      max = 12,
-                     value = 9),
+                     value = 5),
         
-        p("Note: ShotSpotter data available beginning 09/2013"),
+        p("Note: ShotSpotter data available beginning 05/2013"),
         br(),
         
         checkboxGroupInput("Type",
