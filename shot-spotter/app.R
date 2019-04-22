@@ -50,7 +50,7 @@ server <- function(input, output) {
   
    output$mapPlot <- renderLeaflet({
      
-     shot_select <- shot %>% filter(year == input$Year, month == input$Month, type == input$Type)
+     shot_select <- shot %>% filter(year == input$Year, month == input$Month, type %in% input$Type)
      
      pal <- colorFactor(palette = c("red", "blue", "green"), 
                         levels = c("Multiple Gunshots", "Single Gunshot", "Gunshot or Firecracker"))
