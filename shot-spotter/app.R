@@ -57,7 +57,7 @@ ui <- fluidPage(
         # Include note about the limitations of ShotSpotter data and a line beak
         # for aesthetic purposes
         
-        p("Press the PLAY button to start the animation")
+        p("Press the PLAY button to start the animation"),
         
         p("Note: ShotSpotter data available beginning 05/2013"),
         
