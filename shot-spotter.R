@@ -7,7 +7,7 @@ library(leaflet)
 #library(ggthemes)
 #library(gganimate)
 
-shot <- read_csv(file = "shot-spotter/camdencounty_nj.csv") %>% mutate(type = fct_recode(type, "Multiple Gunshots" = "Multiple_Gunshots",
+shot <- read_csv(file = "camdencounty_nj.csv") %>% mutate(type = fct_recode(type, "Multiple Gunshots" = "Multiple_Gunshots",
                            "Single Gunshot" = "Single_Gunshot",
                            "Gunshot or Firecracker" = "Gunshot_or_Firecracker"))
 
