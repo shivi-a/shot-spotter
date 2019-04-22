@@ -81,16 +81,34 @@ ui <- fluidPage(
 
 # Define server logic required to draw a Leaflet plot
 
-server <- function(input, output) {
+server <- function(input, output, session) {
   
    output$mapPlot <- renderLeaflet({
+     
+     if (length(input$Type) == 0 | (input$Year == 2013 & input$Month < 5)) {
+        
+       leaflet(options = leafletOptions(minZoom = 13, dragging = TRUE))  %>% 
+         addProviderTiles("Esri.WorldStreetMap")  %>% 
+         setView(lng = -75.119621, lat = 39.931364, zoom = 13) %>% 
+         
+         # Fix the bounds to which the leaflet map may be dragged, such that it is
+         # limited to the Camden City area
+         
+         setMaxBounds(lng1 = -75.119621 + .075, 
+                      lat1 = 39.931364 + .05, 
+                      lng2 = -75.119621 - .075, 
+                      lat2 = 39.931364 - .05)
+       
+     }
+     
+     else {
      
      shot_select <- shot %>% filter(year == input$Year, month == input$Month, type %in% input$Type)
      
      pal <- colorFactor(palette = c("red", "blue", "green"), 
                         levels = c("Multiple Gunshots", "Single Gunshot", "Gunshot or Firecracker"))
      
-     leaflet(options = leafletOptions(minZoom = 12, dragging = TRUE))  %>% 
+     leaflet(options = leafletOptions(minZoom = 13, dragging = TRUE))  %>% 
        addProviderTiles("Esri.WorldStreetMap")  %>% 
        setView(lng = -75.119621, lat = 39.931364, zoom = 13) %>% 
        addCircleMarkers(
@@ -121,6 +139,7 @@ server <- function(input, output) {
                     lat1 = 39.931364 + .05, 
                     lng2 = -75.119621 - .075, 
                     lat2 = 39.931364 - .05)
+     }
    })
 }
 
