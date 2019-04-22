@@ -94,7 +94,7 @@ ui <- fluidPage(
 
 # Define server logic required to draw a Leaflet plot
 
-server <- function(input, output, session) {
+server <- function(input, output) {
   
    output$mapPlot <- renderLeaflet({
      
