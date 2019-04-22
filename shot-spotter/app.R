@@ -143,7 +143,7 @@ server <- function(input, output) {
      # factor levels for gunshot type so that they will be distinguishable on
      # the map
      
-     pal <- colorFactor(palette = c("red", "blue", "green"), 
+     pal <- colorFactor(palette = c("red", "blue", "darkgreen"), 
                         levels = c("Multiple Gunshots", "Single Gunshot", "Gunshot or Firecracker"))
      
      # Create leaflet map with a minimum zoom of 13, focused on Camden, but
