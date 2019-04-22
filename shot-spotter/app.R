@@ -87,6 +87,10 @@ ui <- fluidPage(
         
         h6("Thanks to data from the ", a("ShotSpotter Project", href="http://justicetechlab.org/shotspotter-data/"), " by the Justice Tech Lab, we can visualize gunshot data in Camden, NJ"),
         
+        # Add note to the GitHub Source Code
+        
+        h6("View the source code on GitHub ", a("HERE", href="https://github.com/shivi-a/shot-spotter")),
+        
         # Include the Leaflet map output
         
         leafletOutput("mapPlot")
