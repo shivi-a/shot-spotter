@@ -179,7 +179,7 @@ server <- function(input, output) {
          # points nearby can be more clearly visualized
          
          radius = 1, 
-         label = shot_select$date) %>% 
+         label = paste0(shot_select$date, " - ", shot_select$type)) %>% 
        
        # Fix the bounds to which the leaflet map may be dragged, such that it is
        # limited to the Camden City area
