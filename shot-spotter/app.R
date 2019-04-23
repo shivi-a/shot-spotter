@@ -91,7 +91,8 @@ ui <- fluidPage(
         
         h6("View the source code on GitHub ", a("HERE", href="https://github.com/shivi-a/shot-spotter")),
         
-        # Include the Leaflet map output
+        # Include the Leaflet map output - inspired by Jacob's investigation of
+        # using Google Maps overlays during class
         
         leafletOutput("mapPlot")
       )
